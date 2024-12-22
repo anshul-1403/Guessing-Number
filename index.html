@@ -33,6 +33,7 @@
             color: white;
             border: none;
             cursor: pointer;
+            width: 80%;
         }
         button:hover 
         {
@@ -41,6 +42,18 @@
         .message 
         {
             margin-top: 20px;
+        }
+        
+        @media (max-width: 600px) 
+        {
+            input[type="text"], button 
+            {
+                width: 100%; 
+            }
+            .container 
+            {
+                padding: 15px;
+            }
         }
     </style>
 </head>
