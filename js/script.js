@@ -1,4 +1,4 @@
-let randomNumber=Math.floor(Math.random() * 100) + 1;
+let randomNumber=Math.floor(Math.random() * 10) + 1;
 let attempts=0;
 function checkGuess() 
 {
@@ -11,9 +11,9 @@ function checkGuess()
         message.textContent="Please enter a valid number.";
         return;
     }
-    if (guess<1 || guess>100) 
+    if (guess<1 || guess>10) 
     {
-        message.textContent="Your guess must be between 1 and 100.";
+        message.textContent="Your guess must be between 1 and 10.";
         return;
     }
 
@@ -25,7 +25,7 @@ function checkGuess()
     } 
     else if (guess<randomNumber) 
     {
-        if((randomNumber-guess)>=30)
+        if((randomNumber-guess)>=3)
         {    
             message.textContent = "Too Low!";
             message.style.color = "red";
@@ -38,7 +38,7 @@ function checkGuess()
     } 
     else 
     {
-        if((guess-randomNumber)>=30)
+        if((guess-randomNumber)>=3)
         {    
             message.textContent = "Too High!";
             message.style.color = "red";
@@ -55,7 +55,7 @@ function resetGame()
 {
     setTimeout(()=> 
     {
-        randomNumber=Math.floor(Math.random()*100)+1;
+        randomNumber=Math.floor(Math.random()*10)+1;
         attempts = 0;
         document.getElementById("guessInput").value = "";
         document.getElementById("message").textContent = "";
